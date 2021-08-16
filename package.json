@@ -1,0 +1,25 @@
+{
+  "name": "webpanoscopy",
+  "version": "1.0.0",
+  "description": "Merge images with similar features",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gestorHan/WebPanoscopy.git"
+  },
+  "author": "GestorDev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gestorHan/WebPanoscopy/issues"
+  },
+  "homepage": "https://github.com/gestorHan/WebPanoscopy#readme",
+  "dependencies": {
+    "preact": "^10.5.14"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}
