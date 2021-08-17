@@ -501,49 +501,205 @@ n = c.slice, exports.options = l = {
 }, _.prototype.forceUpdate = function (n) {
   this.__v && (this.__e = !0, n && this.__h.push(n), m(this));
 }, _.prototype.render = d, t = [], o = "function" == typeof Promise ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout, g.__r = 0, f = 0;
-},{}],"app.tsx":[function(require,module,exports) {
+},{}],"src/Upload.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-/*
-import * as React from 'preact';
-import * as ReactDOM from 'preact';
-import { h, Component } from 'preact'
+exports.default = void 0;
 
+var React = _interopRequireWildcard(require("preact"));
 
-import Upload from './Upload';
-import Button from './Button';
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
-class App extends React.Component<{greeting: string}, {count:number}> {
-  state = {count: 0};
-  render() {
-      return (
-          <div>
-              <h2>{this.props.greeting}</h2>
-              <Button></Button>
-              <button onClick={() => this.setState(
-                {count: this.state.count+1})}>
-                This button has been clicked {this.state.count} times.
-              </button>
-          </div>);
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var Upload = /*#__PURE__*/function (_Component) {
+  _inherits(Upload, _Component);
+
+  var _super = _createSuper(Upload);
+
+  function Upload(props) {
+    var _this;
+
+    _classCallCheck(this, Upload);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      file: null
+    };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    return _this;
   }
-}
-ReactDOM.render(
-  <App greeting="Hello, world!"/>,
-  document.getElementById('app')
-);
-*/
+
+  _createClass(Upload, [{
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.setState({
+        file: URL.createObjectURL(event.target.files[0])
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return (0, React.h)("div", null, "Prueba", (0, React.h)("input", {
+        type: "file",
+        onChange: this.handleChange
+      }), (0, React.h)("img", {
+        src: this.state.file
+      }));
+    }
+  }]);
+
+  return Upload;
+}(React.Component);
+
+var _default = Upload;
+exports.default = _default;
+},{"preact":"node_modules/preact/dist/preact.module.js"}],"src/app.tsx":[function(require,module,exports) {
+"use strict";
+
+var __extends = this && this.__extends || function () {
+  var _extendStatics = function extendStatics(d, b) {
+    _extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) {
+        if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+      }
+    };
+
+    return _extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+
+    _extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  Object.defineProperty(o, k2, {
+    enumerable: true,
+    get: function get() {
+      return m[k];
+    }
+  });
+} : function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
+});
+
+var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
+  Object.defineProperty(o, "default", {
+    enumerable: true,
+    value: v
+  });
+} : function (o, v) {
+  o["default"] = v;
+});
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  }
+
+  __setModuleDefault(result, mod);
+
+  return result;
+};
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var React = __importStar(require("preact"));
+
+var ReactDOM = __importStar(require("preact"));
 
 var preact_1 = require("preact");
 
-var App = function App() {
-  return h("h1", null, "Hello from Preact and Typescript!");
-};
+var Upload_1 = __importDefault(require("./Upload"));
 
-preact_1.render(h(App, null), document.getElementById('app'));
-},{"preact":"node_modules/preact/dist/preact.module.js"}],"../../../../../.npm-global/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var App = function (_super) {
+  __extends(App, _super);
+
+  function App() {
+    var _this = _super !== null && _super.apply(this, arguments) || this;
+
+    _this.state = {
+      count: 0
+    };
+    return _this;
+  }
+
+  App.prototype.render = function () {
+    var _this = this;
+
+    return preact_1.h("div", null, preact_1.h("h2", null, this.props.greeting), preact_1.h(Upload_1.default, null), preact_1.h("button", {
+      onClick: function onClick() {
+        return _this.setState({
+          count: _this.state.count + 1
+        });
+      }
+    }, "This button has been clicked ", this.state.count, " times."));
+  };
+
+  return App;
+}(React.Component);
+
+ReactDOM.render(preact_1.h(App, {
+  greeting: "Hello, world!"
+}), document.getElementById('app'));
+/*
+import { h, render } from 'preact';
+  
+const App = () => <h1>Hello from Preact and Typescript!</h1>;
+
+render(<App />, document.getElementById('app'));
+*/
+},{"preact":"node_modules/preact/dist/preact.module.js","./Upload":"src/Upload.jsx"}],"../../../../../.npm-global/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -571,7 +727,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40247" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37231" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -747,5 +903,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../.npm-global/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.tsx"], null)
-//# sourceMappingURL=/app.5793fd45.js.map
+},{}]},{},["../../../../../.npm-global/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/app.tsx"], null)
+//# sourceMappingURL=/app.686bda2c.js.map
