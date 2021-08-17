@@ -675,22 +675,14 @@ var App = function (_super) {
   }
 
   App.prototype.render = function () {
-    var _this = this;
-
-    return preact_1.h("div", null, preact_1.h("h2", null, this.props.greeting), preact_1.h(Upload_1.default, null), preact_1.h("button", {
-      onClick: function onClick() {
-        return _this.setState({
-          count: _this.state.count + 1
-        });
-      }
-    }, "This button has been clicked ", this.state.count, " times."));
+    return preact_1.h("div", null, preact_1.h("h2", null, this.props.message), preact_1.h(Upload_1.default, null));
   };
 
   return App;
 }(React.Component);
 
 ReactDOM.render(preact_1.h(App, {
-  greeting: "Hello, world!"
+  message: "Upload images"
 }), document.getElementById('app'));
 /*
 import { h, render } from 'preact';
@@ -727,7 +719,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37231" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41009" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
