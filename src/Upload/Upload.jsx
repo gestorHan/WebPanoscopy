@@ -1,5 +1,6 @@
 import * as React from "preact";
 import { h, Component } from 'preact'
+import style from './style.scss';
 
 
 class Upload extends Component {
@@ -17,9 +18,15 @@ class Upload extends Component {
   }
   render() {
     return (
-      <div>
-        Prueba
-        <input type="file" onChange={this.handleChange} />
+      <div style={{"height": "100%" ,"":"red" }}>
+        <label class="upload-label"  for= "Image"> 
+        <div>
+          Arrastre aqui sus archivos 
+        </div>
+        <input  id="Image" class="upload" type="file" onChange={this.handleChange} />
+          </label>
+
+      
         <img src={this.state.file} />
       </div>
     );

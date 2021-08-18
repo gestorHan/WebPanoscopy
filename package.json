@@ -4,7 +4,8 @@
   "description": "Merge images with similar features",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
+    "sass": "^1.38.0",
     "typescript": "^4.3.5"
   },
   "alias": {

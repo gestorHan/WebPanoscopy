@@ -1,27 +1,36 @@
+import * as React from "preact";
+import * as ReactDOM from "preact";
+import { h, Component } from "preact";
 
-import * as React from 'preact';
-import * as ReactDOM from 'preact';
-import { h, Component } from 'preact'
+import Upload from "./Upload/Upload";
+import ActionButton from "./ActionButton/ActionButton"
 
-
-import Upload from './Upload';
-import Button from './Button';
-
-class App extends React.Component<{message: string}, {count:number}> {
-  state = {count: 0};
+class App extends React.Component<{ message: string }, { count: number }> {
+  state = { count: 0 };
   render() {
     return (
       <div>
-              <h2>{this.props.message}</h2>
-              <Upload/>
-          </div>);
+
+        <div id="Frame" style={{"height":"100vh", "width":"100vw ","display": "flex" }}>
+          <div id="Container-Uploads" style={{"display": "flex" , "flexDirection":"column" ,"justify-content": "center" }}>
+            <Upload/>
+            <ActionButton />
+            <Upload />
+          </div>
+
+          <div id="Resultado">
+            Resultado final
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 ReactDOM.render(
-  <App message="Upload images"/>,
-  document.getElementById('app')
-  );
-  
+  <App message="Upload images" />,
+  document.getElementById("app")
+);
+
 /*
 import { h, render } from 'preact';
   

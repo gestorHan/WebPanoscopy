@@ -1,0 +1,32 @@
+/* SCSS HEX */
+.upload {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.upload-label {
+  height: 100%;
+  margin: 10px;
+  font-size: 1.25em;
+  font-weight: 700;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+}
+.upload-label div {
+  height: 30px;
+  color: red;
+  background-color: black;
+}
+/* SCSS HEX */
+.button-action {
+  margin: 10px;
+  height: 10rem;
+  background-color: #ffe8d1ff;
+}
+
+/*# sourceMappingURL=/app.686bda2c.css.map */

@@ -1,0 +1,38 @@
+/* SCSS HEX */
+$white: #ffffffff;
+$antique-white: #ffe8d1ff;
+$blue-munsell: #568ea3ff;
+$middle-blue: #68c3d4ff;
+$raw-umber: #826251ff;
+
+.upload {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+
+
+
+
+}
+
+.upload-label{
+    height: 100%;
+
+    margin: 10px;
+    font-size: 1.25em;
+    font-weight: 700;
+    background-color: gray;
+    display:flex; 
+    align-items:center;
+    div{
+        height: 30px;
+
+        color:red;
+        background-color: black;
+    }
+    
+
+}
